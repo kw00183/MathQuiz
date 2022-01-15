@@ -34,7 +34,7 @@ namespace MathQuiz
             this.plusLeftLabel = new System.Windows.Forms.Label();
             this.plusEqualSign = new System.Windows.Forms.Label();
             this.plusRightLabel = new System.Windows.Forms.Label();
-            this.plusSIgn = new System.Windows.Forms.Label();
+            this.plusSign = new System.Windows.Forms.Label();
             this.sum = new System.Windows.Forms.NumericUpDown();
             this.difference = new System.Windows.Forms.NumericUpDown();
             this.minusSign = new System.Windows.Forms.Label();
@@ -107,16 +107,16 @@ namespace MathQuiz
             this.plusRightLabel.Text = "?";
             this.plusRightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // plusSIgn
+            // plusSign
             // 
-            this.plusSIgn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.plusSIgn.Location = new System.Drawing.Point(112, 68);
-            this.plusSIgn.Name = "plusSIgn";
-            this.plusSIgn.Size = new System.Drawing.Size(60, 50);
-            this.plusSIgn.TabIndex = 6;
-            this.plusSIgn.Text = "+";
-            this.plusSIgn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.plusSIgn.Click += new System.EventHandler(this.label4_Click);
+            this.plusSign.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.plusSign.Location = new System.Drawing.Point(112, 68);
+            this.plusSign.Name = "plusSign";
+            this.plusSign.Size = new System.Drawing.Size(60, 50);
+            this.plusSign.TabIndex = 6;
+            this.plusSign.Text = "+";
+            this.plusSign.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.plusSign.Click += new System.EventHandler(this.label4_Click);
             // 
             // sum
             // 
@@ -281,6 +281,7 @@ namespace MathQuiz
             this.startButton.TabIndex = 1;
             this.startButton.Text = "Start the Quiz!";
             this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
             // Form1
             // 
@@ -304,7 +305,7 @@ namespace MathQuiz
             this.Controls.Add(this.minusEqualSign);
             this.Controls.Add(this.minusLeftLabel);
             this.Controls.Add(this.sum);
-            this.Controls.Add(this.plusSIgn);
+            this.Controls.Add(this.plusSign);
             this.Controls.Add(this.plusRightLabel);
             this.Controls.Add(this.plusEqualSign);
             this.Controls.Add(this.plusLeftLabel);
@@ -330,7 +331,7 @@ namespace MathQuiz
         private System.Windows.Forms.Label plusLeftLabel;
         private System.Windows.Forms.Label plusEqualSign;
         private System.Windows.Forms.Label plusRightLabel;
-        private System.Windows.Forms.Label plusSIgn;
+        private System.Windows.Forms.Label plusSign;
         private System.Windows.Forms.NumericUpDown sum;
         private System.Windows.Forms.NumericUpDown difference;
         private System.Windows.Forms.Label minusSign;
