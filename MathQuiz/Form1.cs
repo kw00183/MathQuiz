@@ -121,6 +121,7 @@ namespace MathQuiz
                 // got the answer right. Stop the timer  
                 // and show a MessageBox.
                 timer1.Stop();
+                ResetTimeLabelColor();
                 MessageBox.Show("You got all the answers right!",
                                 "Congratulations!");
                 startButton.Enabled = true;
@@ -132,6 +133,11 @@ namespace MathQuiz
                 // display the new time left by updating the 
                 // Time Left label.
                 timeLeft--;
+                if (timeLeft < 6 && timeLeft > 0)
+                {
+                    // Change color if time is 5 seconds or less
+                    timeLabel.BackColor = Color.Red;
+                }
                 timeLabel.Text = timeLeft + " seconds";
             }
             else
@@ -140,6 +146,7 @@ namespace MathQuiz
                 // a MessageBox, and fill in the answers.
                 timer1.Stop();
                 timeLabel.Text = "Time's up!";
+                ResetTimeLabelColor();
                 MessageBox.Show("You didn't finish in time.", "Sorry");
                 sum.Value = addend1 + addend2;
                 difference.Value = minuend - subtrahend;
@@ -164,6 +171,11 @@ namespace MathQuiz
                 return false;
         }
 
+        private void ResetTimeLabelColor()
+        {
+            timeLabel.BackColor = Color.Transparent;
+        }
+
         private void answer_Enter(object sender, EventArgs e)
         {
             // Select the whole answer in the NumericUpDown control.
@@ -174,6 +186,38 @@ namespace MathQuiz
                 int lengthOfAnswer = answerBox.Value.ToString().Length;
                 answerBox.Select(0, lengthOfAnswer);
             }
+        }
+
+        private void sum_ValueChanged(object sender, EventArgs e)
+        {
+            if (addend1 + addend2 == sum.Value)
+                sum.BackColor = Color.Green;
+            else
+                sum.BackColor = Color.White;
+        }
+
+        private void difference_ValueChanged(object sender, EventArgs e)
+        {
+            if (minuend - subtrahend == difference.Value)
+                difference.BackColor = Color.Green;
+            else
+                difference.BackColor = Color.White;
+        }
+
+        private void product_ValueChanged(object sender, EventArgs e)
+        {
+            if (multiplicand * multiplier == product.Value)
+                product.BackColor = Color.Green;
+            else
+                product.BackColor = Color.White;
+        }
+
+        private void quotient_ValueChanged(object sender, EventArgs e)
+        {
+            if (dividend / divisor == quotient.Value)
+                quotient.BackColor = Color.Green;
+            else
+                quotient.BackColor = Color.White;
         }
     }
 }
